@@ -31,7 +31,7 @@ int main(){
                 }
                 if(!ans) break;//这个break和更内层是break是配合的,最内层跳出它就也跳出,所以传递信息的ans要设立在它俩之外
             }
-            if(ans) { printf("%d\n", p); break; }
+            if(ans) { printf("%d\n", p); break; }//因为是从小到大遍历,所以首次得到的即是最小的
         }
     }
     
