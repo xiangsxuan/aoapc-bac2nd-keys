@@ -22,14 +22,14 @@ int main(){
         else puts("");
         scanf("%s", line);
         int sz = strlen(line);
-        _rep(p, 1, sz){
+        _rep(p, 1, sz){//周期
             if(sz % p) continue;
             bool ans = true;
-            _for(i, 0, p) {
-                for(int j = i + p; j < sz; j+=p) {
+            _for(i, 0, p) {//一个周期串0~p
+                for(int j = i + p; j < sz; j+=p) {//从首个周期串后开始遍历 n%p的每个串用for的递加p即可
                     if(line[j] != line[i]) { ans = false; break; }
                 }
-                if(!ans) break;
+                if(!ans) break;//这个break和更内层是break是配合的,最内层跳出它就也跳出,所以传递信息的ans要设立在它俩之外
             }
             if(ans) { printf("%d\n", p); break; }
         }
